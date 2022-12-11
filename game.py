@@ -1,21 +1,33 @@
-def print_board() :
-    board_initial = ['-', '-', '-',
+board_initial = ['-', '-', '-',
         '-', '-', '-',
         '-', '-', '-']
 
-    print(board_initial[0] + " | " + board_initial[1] + " | " + board_initial[2])
+current_player = "X"
+winner = None
+game_running = True
+
+def print_board(board) :
+    
+    print(board[0] + " | " + board[1] + " | " + board[2])
     print("-" * 9)
-    print(board_initial[3] + " | " + board_initial[4] + " | " + board_initial[5])
+    print(board[3] + " | " + board[4] + " | " + board[5])
     print("-" * 9)
-    print(board_initial[6] + " | " + board_initial[7] + " | " + board_initial[8])
+    print(board[6] + " | " + board[7] + " | " + board[8])
 
 
+def player_into_X_or_O(board) :
 
+    position = input("Enter position 1 - 9: ")
+
+    if position >= 1 and position <= 9 and board[position - 1] == "-" :
+        board[position - 1] = current_player
+    else :
+        print("Oops!, position is ocuped")
 
 
 
 def main() :
-    print_board()
+    pass
 
 
 
