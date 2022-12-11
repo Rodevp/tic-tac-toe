@@ -71,7 +71,23 @@ def check_columns(board):
         change_winner(current_player)
         return True
 
-    
+
+def check_tie(board) :
+
+    global game_running
+    if  not "-" in board :
+        print_board(board)
+        print("---results---")
+        game_running = False
+
+
+def valid_player() :
+
+    global current_player
+    if current_player == "X" :
+        current_player = "O"
+    else :
+        current_player = "X"
 
 
 def main() :
