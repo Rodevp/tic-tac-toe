@@ -46,6 +46,19 @@ def check_matchs_rows(board) :
         return True
 
 
+def check_diagonals(board) :
+    
+    if board[0] == board[4] == board[5] and board[0] != "-":
+        change_winner(True)
+        return True
+
+    if board[2] == board[4] == board[6] and board[2] != "-" :
+        change_winner(True)
+        return True
+
+
+
+
 def main() :
     pass
 
