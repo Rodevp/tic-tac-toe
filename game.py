@@ -34,26 +34,26 @@ def player_into_X_or_O(board) :
 def check_matchs_rows(board) :
 
     if board[0] == board[1] == board[2] and board[0] != "-" :
-        change_winner(True)
+        change_winner(board[0])
         return True
 
     if board[3] == board[4] == board[5] and board[3] != "-" :
-        change_winner(True)
+        change_winner(board[3])
         return True
 
     if board[2] == board[5] == board[8] and board[2] != "-" :
-        change_winner(True)
+        change_winner(board[2])
         return True
 
 
 def check_diagonals(board) :
 
     if board[0] == board[4] == board[5] and board[0] != "-":
-        change_winner(True)
+        change_winner(board[0])
         return True
 
     if board[2] == board[4] == board[6] and board[2] != "-" :
-        change_winner(True)
+        change_winner(board[2])
         return True
 
 
