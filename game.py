@@ -23,7 +23,7 @@ def print_board(board) :
 
 def player_into_X_or_O(board) :
 
-    position = input("Enter position 1 - 9: ")
+    position = int( input("Enter position 1 - 9: ") )
 
     if position >= 1 and position <= 9 and board[position - 1] == "-" :
         board[position - 1] = current_player
@@ -90,8 +90,18 @@ def valid_player() :
         current_player = "X"
 
 
+def check_win():
+    if check_matchs_rows(board_initial) or check_diagonals(board_initial) or check_columns(board_initial):
+        print(f"The winner is {winner}")
+
+
 def main() :
-    pass
+    while game_running :
+        print_board(board_initial)
+        player_into_X_or_O(board_initial)
+        check_win()
+        check_tie(board_initial)
+        valid_player()
 
 
 
